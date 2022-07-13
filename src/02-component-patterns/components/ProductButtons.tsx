@@ -1,24 +1,34 @@
-import { useContext } from "react";
+import { useContext, CSSProperties } from 'react';
 import { ProductContext } from "./ProductCard";
 
 import styles from '../styles/styles.module.css'
 
 
-export const ProductButtons = () => {
+export interface Props {
+  className?: string;
+  style?: CSSProperties;
+}
 
-    const { increaseBy, counter } = useContext( ProductContext );
+export const ProductButtons = ({ className, style }: Props) => {
 
-    return (
-        <div className={ styles.buttonsContainer }>
-            <button
-                className={ styles.buttonMinus }
-                onClick={ () => increaseBy( -1 ) }> - </button>
+  const { increaseBy, counter } = useContext(ProductContext);
 
-            <div className={ styles.countLabel }> { counter } </div>
+  return (
+    <div style={style} className={`${styles.buttonsContainer} ${className}`}>
+      <button
+        className={styles.buttonMinus}
+        onClick={() => increaseBy(-1)}> -
+      </button>
 
-            <button
-                className={ styles.buttonAdd }
-                onClick={ () => increaseBy( +1 ) }> + </button>
-        </div>
-    );
+      <div className={styles.countLabel}>
+        {counter}
+      </div>
+
+      <button
+        className={styles.buttonAdd}
+        onClick={() => increaseBy(+1)}>
+        +
+      </button>
+    </div>
+  );
 }

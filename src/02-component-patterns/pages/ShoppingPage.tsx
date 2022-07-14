@@ -8,7 +8,6 @@ const product = {
 }
 
 
-
 export const ShoppingPage = () => {
 	return (
 		<div>

@@ -33,11 +33,9 @@ export const ProductCard = ({ children, product, className, style, onChange, val
         {children({
           count: counter,
           isMaxCountReached,
-          maxCount,
           product,
           increaseBy,
           reset,
-
         })}
       </div>
     </Provider>

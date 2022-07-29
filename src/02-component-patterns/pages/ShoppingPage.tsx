@@ -1,5 +1,4 @@
 import { ProductCard, ProductImage, ProductTitle, ProductButtons } from '../components';
-import "../styles/custom-style.css"
 import { products } from '../data/products';
 
 
@@ -17,11 +16,12 @@ export const ShoppingPage = (): JSX.Element => {
         product={product}
         initialValues={{
           count: 0,
-          //maxCount: 10
+          maxCount: 10
         }}
       >
         {
           ({ reset, increaseBy, count, isMaxCountReached, maxCount }) => (
+
             <>
               <ProductImage />
               <ProductTitle />

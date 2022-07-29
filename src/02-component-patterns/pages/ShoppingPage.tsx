@@ -21,9 +21,9 @@ export const ShoppingPage = (): JSX.Element => {
         }}
       >
         {
-          ({ reset, increaseBy, count, isMaxCountReached }) => (
+          ({ reset, increaseBy, count, isMaxCountReached, maxCount }) => (
             <>
-              <ProductImage/>
+              <ProductImage />
               <ProductTitle />
               <ProductButtons />
             </>
